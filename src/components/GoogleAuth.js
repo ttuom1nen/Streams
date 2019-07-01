@@ -24,13 +24,29 @@ export default class GoogleAuth extends Component {
     this.setState({ isSignedIn: this.auth.isSignedIn.get() });
   };
 
+  onSignIn = () => {
+    this.auth.signIn();
+  };
+
+  onSignOut = () => {
+    this.auth.signOut();
+  };
+
   renderAuthButton() {
     if (this.state.isSignedIn === null) {
-      return <div>Maybe signed in</div>;
+      return null;
     } else if (this.state.isSignedIn) {
-      return <div>I am signed in!</div>;
+      return (
+        <button onClick={this.onSignOut} className="btn btn-danger">
+          Log out
+        </button>
+      );
     } else {
-      return <div>Not signed in!</div>;
+      return (
+        <button onClick={this.onSignIn} className="btn btn-primary">
+          Sign in with Google
+        </button>
+      );
     }
   }
 
