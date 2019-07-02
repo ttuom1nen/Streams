@@ -12,7 +12,7 @@ const App = () => {
     <div className="container">
       <BrowserRouter>
         <Navigation />
-        <div>
+        <div className="pt-5">
           <Route path="/" exact component={StreamList} />
           <Route path="/streams/new" exact component={StreamCreate} />
           <Route path="/streams/edit" exact component={StreamEdit} />
