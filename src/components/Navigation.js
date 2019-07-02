@@ -4,7 +4,7 @@ import GoogleAuth from "./GoogleAuth";
 
 const Navigation = () => {
   return (
-    <nav className="container mt-2">
+    <nav className="container mt-2 border-bottom">
       <div className="row">
         <div className="col">
           <Link to="/" className="item nav-link">
