@@ -13,11 +13,13 @@ class StreamCreate extends React.Component {
   }
 
   renderInput = ({ input, label, meta }) => {
-    console.log(meta);
+    const inputClass = `form-control ${
+      meta.error && meta.touched ? "is-invalid" : ""
+    }`;
     return (
       <div className="form-group">
         <label>{label}</label>
-        <input className="form-control" {...input} autoComplete="off" />
+        <input className={inputClass} {...input} autoComplete="off" />
         {this.renderError(meta)}
       </div>
     );
