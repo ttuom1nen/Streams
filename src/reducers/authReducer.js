@@ -8,7 +8,6 @@ export default (state = initialState, { type, payload }) => {
       return { ...state, isSignedIn: true, userId: payload };
     case "SIGN_OUT":
       return { ...state, isSignedIn: false, userId: null };
-
     default:
       return state;
   }
