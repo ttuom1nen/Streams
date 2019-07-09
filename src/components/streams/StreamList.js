@@ -12,7 +12,19 @@ class StreamList extends React.Component {
       stream.userId === this.props.currentUserId &&
       !!this.props.currentUserId
     ) {
-      return <div>Edit / Delete</div>;
+      return (
+        <div className="float-right">
+          <div className="row">
+            <div className="col-md-2 d-sm-none" />
+            <div className="col-md-5">
+              <button className="btn btn-primary float-right">Edit</button>
+            </div>
+            <div className="col-md-5">
+              <button className="btn btn-danger float-right">Delete</button>
+            </div>
+          </div>
+        </div>
+      );
     }
   }
 
@@ -20,17 +32,32 @@ class StreamList extends React.Component {
     return this.props.streams.map(stream => {
       return (
         <li className="media p-3 border-bottom" key={stream.id}>
-          <img
-            src="https://via.placeholder.com/64"
-            className="mr-3"
-            alt="stream thumbnail"
-          />
+          <div className="container">
+            <div className="row">
+              <div className="col-3 col-lg-2">
+                <img
+                  src="https://via.placeholder.com/64"
+                  className="mr-3 d-md-none d-xs-block"
+                  alt="stream thumbnail"
+                />
+                <img
+                  src="https://via.placeholder.com/128"
+                  className="mr-3 d-none d-md-block d-lg-block"
+                  alt="stream thumbnail"
+                />
+              </div>
 
-          <div className="media-body">
-            <h5 className="mt-0">{stream.title}</h5>
-            <div className="description text-muted">{stream.description}</div>
+              <div className="col-5 col-lg-7">
+                <div className="media-body">
+                  <h5 className="mt-0">{stream.title}</h5>
+                  <div className="description text-muted">
+                    {stream.description}
+                  </div>
+                </div>
+              </div>
+              <div className="col-4 col-lg-3">{this.renderAdmin(stream)}</div>
+            </div>
           </div>
-          {this.renderAdmin(stream)}
         </li>
       );
     });
