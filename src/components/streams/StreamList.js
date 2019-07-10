@@ -18,7 +18,12 @@ class StreamList extends React.Component {
           <div className="row">
             <div className="col-md-2 d-sm-none" />
             <div className="col-md-5">
-              <button className="btn btn-primary float-right">Edit</button>
+              <Link
+                to={`/streams/edit/${stream.id}`}
+                className="btn btn-primary float-right"
+              >
+                Edit
+              </Link>
             </div>
             <div className="col-md-5">
               <button className="btn btn-danger float-right">Delete</button>
