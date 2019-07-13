@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import history from "../history";
 
 const Modal = props => {
+  console.log(props);
   return ReactDOM.createPortal(
     <div
-      onClick={() => history.push("/")}
+      onClick={props.onDismiss}
       className="modal"
       style={{
         backgroundColor: "rgba(0,0,0,0.5)",
@@ -33,7 +33,7 @@ const Modal = props => {
             </button>
           </div>
           <div className="modal-body">
-            <p>{props.msg}</p>
+            <p>{props.content}</p>
           </div>
           <div className="modal-footer">{props.actions}</div>
         </div>
