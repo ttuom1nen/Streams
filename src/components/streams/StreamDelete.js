@@ -39,7 +39,6 @@ class StreamDelete extends React.Component {
   }
 
   render() {
-    console.log("hep");
     return (
       <Modal
         title="Delete Stream"

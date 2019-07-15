@@ -60,7 +60,9 @@ class StreamList extends React.Component {
 
               <div className="col-5 col-lg-7">
                 <div className="media-body">
-                  <h5 className="mt-0">{stream.title}</h5>
+                  <Link to={`/streams/${stream.id}`} className="stretched-link">
+                    <h5 className="mt-0">{stream.title}</h5>
+                  </Link>
                   <div className="description text-muted">
                     {stream.description}
                   </div>
